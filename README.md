@@ -10,27 +10,46 @@ The communication uses the **SOME/IP** protocol, with **CRC (Cyclic Redundancy C
 ## 🧩 System Architecture
 
 +----------------+
+
 | PC Host |
+
 | (Ubuntu/Linux) |
+
 +--------+-------+
+
 |
 | FTP
 v
+
 +----------------+
+
 | QNX VM | (acts as Raspberry Pi 1)
+
 | - Receives data from PC
+
 | - Calculates CRC
+
 | - Sends data + CRC via SOME/IP
+
 +--------+-------+
+
 |
+
 | SOME/IP
+
 v
+
 +----------------+
 | Raspberry Pi 2 |
+
 | (Yocto Linux) |
+
 | - Receives data + CRC
+
 | - Recalculates CRC
+
 | - Compares CRCs for integrity
+
 +----------------+
 
 
@@ -139,17 +158,23 @@ Visualize transmission stats (speed, reliability, retries).
 
 ## 👩‍💻 Contributors
 Nada Hamada
+
 Embedded Systems Trainee @ Brightskies
 
 ## Project Status
 
 ✅ Repository initialized
+
 🔜 CRC calculation implementation
+
 🔜 SOME/IP setup between QNX VM and Raspberry Pi
+
 🔜 Testing and verification phase
 
 ## References
 
 vsomeip Documentation
+
 QNX Neutrino RTOS
+
 Yocto Project
